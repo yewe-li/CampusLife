@@ -109,7 +109,7 @@ npm run test:e2e
 
 [验证记录](docs/verification.md) 区分执行日期、代码版本、历史结果与限制。并发库存正确性测试不等于 HTTP 吞吐压测；本机指标不作为生产 QPS。仓库提供 [GitHub Actions](.github/workflows/verify.yml)，是否远程通过以实际 workflow run 为准。
 
-2026-10-03 本地验证：**68 项单元测试、38 项真实服务集成测试、12 个浏览器场景通过**；不含 `.env` 的干净源码副本也通过 Wrapper 打包。完整环境、源码摘要与边界见验证记录，尚未执行远程 GitHub CI。
+2026-10-03 本地验证：**68 项单元测试、38 项真实服务集成测试、12 个浏览器场景通过**；不含 `.env` 的干净源码副本也通过 Wrapper 打包。同日首次 [GitHub Actions](https://github.com/yewe-li/CampusLife/actions/runs/37134329039) 在 Ubuntu 环境通过相同数量的测试。完整环境、源码摘要与边界见验证记录。
 
 ## 代码与阅读顺序
 

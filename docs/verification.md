@@ -68,7 +68,9 @@ Maven Wrapper 固定 3.9.16，已实际下载、按配置校验并运行。证�
 
 文档使用相对路径，VS Code 使用 `${workspaceFolder}`；`.env`、本机工作记录、构建产物、日志和 npm 依赖被忽略。公开候选文件已检查本机凭据值、个人路径及本地链接，未发现凭据泄露；这不替代未来提交前的检查。
 
-GitHub Actions 包含真实 MySQL/Redis、后端验证和浏览器步骤，**尚未推送或执行远程 CI**。没有云部署、真实用户或商业效果数据。
+2026-10-03 已推送到 [yewe-li/CampusLife](https://github.com/yewe-li/CampusLife)，当前仓库为私有。首次 [GitHub Actions](https://github.com/yewe-li/CampusLife/actions/runs/37134329039) **完成且全部通过：68 项单元测试、38 项真实服务集成测试、12 个浏览器场景**。远端使用 Ubuntu runner、Java 21、MySQL 8.4 / Redis 8 服务容器和 Playwright Chromium，成功上传测试报告。见 [脱敏远端验证记录](evidence/github-ci.json)。
+
+这次 CI 对应首次代码提交 `dc6482be48ac81ebfaffdd90397adf192070862a`，与上述本地验证的源码摘要一致。后续文档提交只补充发布与验证记录。本地证据中“GitHub CI not executed”描述的是生成该报告时的状态，远端结果单独记录。没有云部署、真实用户或商业效果数据。
 
 ## 历史验证：2026-09-30
 

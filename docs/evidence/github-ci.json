@@ -1,0 +1,87 @@
+{
+  "databaseId": 37134329039,
+  "workflowName": "Verify CampusLife",
+  "status": "completed",
+  "conclusion": "success",
+  "headSha": "dc6482be48ac81ebfaffdd90397adf192070862a",
+  "url": "https://github.com/yewe-li/CampusLife/actions/runs/37134329039",
+  "createdAt": "2026-10-03T15:44:48Z",
+  "updatedAt": "2026-10-03T15:47:25Z",
+  "repository": "https://github.com/yewe-li/CampusLife",
+  "visibility": "private",
+  "source_sha256": "96fcec9cce3b0cc68f0249e04765f8ad18072fb41e0f460405b411044ceef6d8",
+  "suite_counts": {
+    "unit": 68,
+    "integration": 38,
+    "browser_scenarios": 12
+  },
+  "jobs": [
+    {
+      "name": "verify",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Initialize containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-java@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ./mvnw -B -ntp -Pintegration verify",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:e2e",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-java@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "scope": "GitHub-hosted ubuntu-latest runner, Java 21, MySQL 8.4/Redis 8 service containers, Playwright Chromium; CI log counts verified, local coverage unchanged"
+}
