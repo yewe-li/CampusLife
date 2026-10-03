@@ -1,0 +1,21 @@
+# Build products, local credentials, private working records and unrelated demos.
+target/
+.env
+.env.*
+!.env.example
+work/
+.work/
+outputs/
+.DS_Store
+*.log
+*.pid
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+node_modules/
+test-results/
+playwright-report/
+*.tsbuildinfo
+# Keep .vscode and .mvn/wrapper: these contain portable project configuration.

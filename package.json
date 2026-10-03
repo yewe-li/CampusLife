@@ -1,0 +1,11 @@
+{
+  "name": "campuslife-browser-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optional browser verification for the Java application; not a frontend build dependency.",
+  "scripts": {
+    "test:e2e": "python3 scripts/browser-tests.py"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

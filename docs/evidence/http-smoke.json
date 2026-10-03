@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-09-29T19:53:25.075856+00:00",
+  "base_url": "http://127.0.0.1:8080",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "checks": [
+    {
+      "check": "HTML demonstration page",
+      "passed": true
+    },
+    {
+      "check": "OpenAPI document",
+      "passed": true
+    },
+    {
+      "check": "Swagger bearer requirements on all protected operations",
+      "passed": true
+    },
+    {
+      "check": "Unsupported HTTP method is 405",
+      "passed": true
+    },
+    {
+      "check": "Unsupported body type is 415",
+      "passed": true
+    },
+    {
+      "check": "Public seeded shop list",
+      "passed": true
+    },
+    {
+      "check": "Unauthenticated private query is 401",
+      "passed": true
+    },
+    {
+      "check": "Seed user receives simulated development code",
+      "passed": true
+    },
+    {
+      "check": "Code request cooldown is 429",
+      "passed": true
+    },
+    {
+      "check": "Seed user logs in and private response has no-store",
+      "passed": true
+    },
+    {
+      "check": "First or previously persisted claim is recognized",
+      "passed": true
+    },
+    {
+      "check": "Repeated claim is rejected",
+      "passed": true
+    },
+    {
+      "check": "Claim appears in private history",
+      "passed": true
+    },
+    {
+      "check": "Logout succeeds",
+      "passed": true
+    },
+    {
+      "check": "Logged out token is invalid",
+      "passed": true
+    },
+    {
+      "check": "200 warm public detail reads all return 200",
+      "passed": true
+    }
+  ],
+  "warm_read_sample": {
+    "requests": 200,
+    "workers": 16,
+    "successes": 200,
+    "elapsed_seconds": 0.19,
+    "requests_per_second": 1052.49,
+    "p50_ms": 14.22,
+    "p95_ms": 18.88,
+    "method": "Python urllib, loopback, Java debug session, warmed cache; one sample; not a capacity estimate"
+  }
+}

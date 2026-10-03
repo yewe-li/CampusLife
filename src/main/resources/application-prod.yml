@@ -1,0 +1,9 @@
+app:
+  redis-prefix: 'campuslife:prod:'
+  auth:
+    dev-code-enabled: false
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

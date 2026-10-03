@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-02T17:27:20.780048+00:00",
+  "command": "./mvnw -B -ntp package",
+  "source_sha256": "96fcec9cce3b0cc68f0249e04765f8ad18072fb41e0f460405b411044ceef6d8",
+  "unit_tests": 68,
+  "passed": true,
+  "has_local_env_file": false,
+  "database_credentials_in_environment": false,
+  "preexisting_build_products": false,
+  "reused_user_maven_cache": true,
+  "packaged_jar": true,
+  "scope": "Fresh public source copy; local macOS, Java build only; not a remote GitHub CI run"
+}

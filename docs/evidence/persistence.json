@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-29T19:57:03.181506+00:00",
+  "action": "VS Code Java debug restart, then database and authenticated HTTP reads",
+  "same_order_after_restart": true,
+  "same_stock_after_restart": true,
+  "authenticated_history_after_restart": true
+}

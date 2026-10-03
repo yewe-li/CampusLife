@@ -1,0 +1,270 @@
+{
+  "generated_at": "2026-10-02T17:27:20.747187+00:00",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "command": "./mvnw -B -ntp clean -Pintegration verify",
+  "source_sha256": "96fcec9cce3b0cc68f0249e04765f8ad18072fb41e0f460405b411044ceef6d8",
+  "suite_counts": {
+    "unit": 68,
+    "integration": 38
+  },
+  "suites": {
+    "unit": [
+      {
+        "name": "com.campuslife.auth.AuthServiceTest",
+        "tests": 13,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.956,
+        "cases": [
+          "demoProfileStillRequiresExplicitCodeOptIn",
+          "consumedOrInvalidOtpCannotCreateSession",
+          "codeEchoCannotBeEnabledOutsideExclusiveDemoProfiles(String)[1]",
+          "codeEchoCannotBeEnabledOutsideExclusiveDemoProfiles(String)[2]",
+          "codeEchoCannotBeEnabledOutsideExclusiveDemoProfiles(String)[3]",
+          "loginStoresOnlyHashedRandomTokenWithFixedTtlAndJsonIdentity",
+          "malformedAuthorizationCannotReachRedis",
+          "unknownAccountCannotReceiveAnOtpOrRegister",
+          "corruptSessionCannotBecomeAnAuthenticatedUser",
+          "validSessionReadDoesNotRefreshItsExpiry",
+          "explicitlyEnabledDefaultDevProfileCanIssueCode",
+          "logoutDeletesOnlyThePresentedSessionAndFailsClosedOnRedisError",
+          "authenticationFailsClosedWhenRedisIsUnavailable"
+        ]
+      },
+      {
+        "name": "com.campuslife.shop.ShopCacheTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.061,
+        "cases": [
+          "failedPostCommitInvalidationDoesNotThrow",
+          "missingShopUsesThirtySecondNegativeCache",
+          "malformedJsonReloadsPublicDataAndStoresWithBoundedJitter",
+          "updatePayloadCannotIncludeAnOwnershipChange",
+          "redisReadFailureFallsBackToDatabaseWithoutAnotherCacheCall"
+        ]
+      },
+      {
+        "name": "com.campuslife.shop.ShopServiceTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.049,
+        "cases": [
+          "userRoleAndDifferentMerchantCannotUpdateShop",
+          "merchantQueriesRejectMissingLoginBeforeAccessingData",
+          "merchantDetailReadsOfflineShopWithoutConsultingPublicCache",
+          "cachedMissingShopDoesNotQueryDatabase",
+          "transactionRollbackDoesNotInvalidateCache",
+          "lostOptimisticUpdateReturnsConflictWithoutInvalidatingCache",
+          "merchantQueriesRejectOrdinaryUserBeforeAccessingData",
+          "committedUpdateIncrementsVersionAndDefersEvictionUntilAfterCommit"
+        ]
+      },
+      {
+        "name": "com.campuslife.support.TestInfrastructureGuardTest",
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.053,
+        "cases": [
+          "acceptsDedicatedDatabaseAndRedisNamespaceWithoutRefreshingContext(String)[1]",
+          "acceptsDedicatedDatabaseAndRedisNamespaceWithoutRefreshingContext(String)[2]",
+          "refusesMissingDatasourceUrlBeforeAnyContextStartup",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[1]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[2]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[3]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[4]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[5]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[6]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[7]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[8]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[9]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[10]",
+          "rejectsWrongDatabaseOrUnsupportedUrlWithoutLeakingRawUrl(String)[11]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[1]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[2]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[3]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[4]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[5]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[6]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[7]",
+          "rejectsRedisOrAlternateDatasourceConfiguration(String, String)[8]"
+        ]
+      },
+      {
+        "name": "com.campuslife.voucher.VoucherClaimTransactionTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.008,
+        "cases": [
+          "rejectsEndInstantBeforeChangingInventory",
+          "recognizesSameUserWhoWonTheLastCouponWhileThisRequestWaited",
+          "reportsSoldOutAndNeverInsertsWithoutAStockDecrement",
+          "letsInsertFailureEscapeSoSpringCanRollbackStock",
+          "rejectsOfflineShopEvenDuringActiveOffer",
+          "acceptsStartInstantUsingUtcEvenWhenClockHasAnotherZoneAndSnapshotsExpiry",
+          "rejectsBeforeStartBeforeChangingInventory"
+        ]
+      },
+      {
+        "name": "com.campuslife.voucher.VoucherRedemptionServiceTest",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.033,
+        "cases": [
+          "rejectsMissingClaim",
+          "checksOwnershipBeforeRevealingWhetherClaimWasRedeemed",
+          "checksCurrentClockAfterWaitingForRowLockAndRejectsExactExpiry",
+          "validatesExactExistingLowercaseHexFormatWithoutEchoingInput",
+          "sensitiveVoucherModelsDoNotPrintRedeemCode",
+          "failsClosedIfConditionalUpdateNoLongerMatches",
+          "rejectsUnauthenticatedOrNonMerchantBeforeLookingUpCode",
+          "repeatedRequestDoesNotOverwriteOriginalRedemption",
+          "returnsMinimalReceiptUsingServerTimeAndMerchantIdentity"
+        ]
+      },
+      {
+        "name": "com.campuslife.voucher.VoucherServiceTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.035,
+        "cases": [
+          "doesNotCallRandomCodeCollisionADuplicateClaim",
+          "scopesBothPageAndCountToAuthenticatedUserAndUsesLongOffset",
+          "rejectsUnboundedPagingBeforeQueryingDatabase",
+          "mapsDuplicateOnlyWhenThisUserHasAClaimAfterTransactionFailure"
+        ]
+      }
+    ],
+    "integration": [
+      {
+        "name": "com.campuslife.auth.AuthIT",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 2.855,
+        "cases": [
+          "correctCodeStillWorksAfterFourWrongAttempts",
+          "readingSessionDoesNotExtendItsRemainingLifetime",
+          "invalidPhoneAndUnknownAccountDoNotCreateUsers",
+          "fifthWrongAttemptDestroysOtpAndCorrectCodeCannotReviveIt",
+          "issuedOtpLogsInDatabaseAccountAndExposesOnlyItsIdentity",
+          "sixteenConcurrentLoginsCanConsumeOneOtpOnlyOnce",
+          "logoutInvalidatesOnlyCurrentSessionAndIsIdempotent",
+          "protectedEndpointsRejectMissingOrMalformedToken"
+        ]
+      },
+      {
+        "name": "com.campuslife.shop.MerchantShopIT",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.138,
+        "cases": [
+          "merchantDetailAllowsOnlyOwnShopAndOmitsOwnershipField",
+          "managementRequiresLoginAndMerchantRole",
+          "invalidManagementPaginationAndIdsReturnBadRequest",
+          "managementReadsDatabaseEvenWhenPublicCacheIsStale",
+          "merchantPagesIncludeOfflineShopsAndCannotSelectAnotherMerchant",
+          "offlineShopStaysManageableAndCanBePublishedAgain"
+        ]
+      },
+      {
+        "name": "com.campuslife.shop.ShopIT",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.248,
+        "cases": [
+          "stablePagesAndCountShareFiltersAndExcludeOfflineShops",
+          "filtersApplyInclusivePriceBoundaryAndReturnEmptyForUnknownCampus",
+          "committedUpdatesEvictCacheAndOfflineShopBecomesNotFound",
+          "invalidQueryBoundsReturnBadRequest",
+          "concurrentUpdatesWithSameVersionHaveOneWinnerAndOneConflict",
+          "invalidRedisJsonIsReplacedWithDatabaseDetail",
+          "invalidPatchAndOwnershipFieldsAreRejectedWithoutChangingDatabase",
+          "ordinaryUserAndOtherMerchantCannotModifyShop",
+          "redisStoresOnlyPublicDetailWithNormalAndNegativeTtls"
+        ]
+      },
+      {
+        "name": "com.campuslife.voucher.VoucherIT",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.344,
+        "cases": [
+          "rejectsExpiredAndOfflineOffersWithoutConsumingInventory",
+          "sixtyFourUsersCompeteWithThirtyTwoWorkersForTwentyCoupons",
+          "mysqlInsertFailureRollsBackAlreadyDecrementedStockAndAllowsRetry",
+          "privatePaginationStaysIsolatedAndKeepsHistoricalRightsWhenShopGoesOffline",
+          "thirtyTwoConcurrentRequestsByOneUserConsumeExactlyOneCoupon"
+        ]
+      },
+      {
+        "name": "com.campuslife.voucher.VoucherRedemptionIT",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.535,
+        "cases": [
+          "rejectsUnauthenticatedUsersAndOtherMerchantsWithoutMutatingOrDisclosingClaim",
+          "offlineShopAndClosedOfferDoNotRevokeUnexpiredIssuedRights",
+          "rejectsMalformedAndUnknownCodesWithoutAcceptingCodeInQueryString",
+          "thirtyTwoConcurrentRedemptionsChangeStatusExactlyOnce",
+          "expiryIsExclusiveAtMicrosecondBoundary(long)[1]",
+          "expiryIsExclusiveAtMicrosecondBoundary(long)[2]",
+          "expiryIsExclusiveAtMicrosecondBoundary(long)[3]",
+          "merchantRedemptionUpdatesOnlyOwnersHistoryAndDoesNotExposePrivateIdentity",
+          "mysqlFailureKeepsIssuedStateAndRetryCanSucceed",
+          "schemaRejectsIncompleteRedemptionAndInvalidMerchantReference"
+        ]
+      }
+    ]
+  },
+  "coverage": {
+    "INSTRUCTION": {
+      "covered": 2321,
+      "missed": 126
+    },
+    "BRANCH": {
+      "covered": 191,
+      "missed": 51
+    },
+    "LINE": {
+      "covered": 413,
+      "missed": 32
+    },
+    "COMPLEXITY": {
+      "covered": 187,
+      "missed": 57
+    },
+    "METHOD": {
+      "covered": 117,
+      "missed": 6
+    },
+    "CLASS": {
+      "covered": 38,
+      "missed": 0
+    }
+  },
+  "scope": "Local MySQL 8.4.11 / Redis 8.10.2; no H2 substitutes; GitHub CI not executed"
+}

@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-10-02T17:29:24.146Z",
+  "fixture": "dedicated-test",
+  "browserVersion": "154.0.8037.92",
+  "passed": true,
+  "scenarios": [
+    {
+      "name": "Public shop filters include the 18.00 boundary and exclude 17.99",
+      "passed": true,
+      "durationMs": 1632
+    },
+    {
+      "name": "Student signs in, claims a voucher and sees it in the private wallet",
+      "passed": true,
+      "durationMs": 568
+    },
+    {
+      "name": "Duplicate claim returns 409 and the same claim survives logout and login",
+      "passed": true,
+      "durationMs": 633
+    },
+    {
+      "name": "Merchant lists owned shops including offline shops and can restore visibility",
+      "passed": true,
+      "durationMs": 652
+    },
+    {
+      "name": "Other merchants cannot open another shop's management form",
+      "passed": true,
+      "durationMs": 384
+    },
+    {
+      "name": "A merchant cannot redeem another shop's voucher",
+      "passed": true,
+      "durationMs": 102
+    },
+    {
+      "name": "Owning merchant redeems once and receives 409 for a duplicate",
+      "passed": true,
+      "durationMs": 511
+    },
+    {
+      "name": "Student refresh displays redeemed status and redemption time",
+      "passed": true,
+      "durationMs": 29
+    },
+    {
+      "name": "Injected 503 preserves the active session and allows recovery",
+      "passed": true,
+      "durationMs": 316
+    },
+    {
+      "name": "Injected 401 clears the session and all displayed private vouchers",
+      "passed": true,
+      "durationMs": 51
+    },
+    {
+      "name": "A delayed private merchant response cannot repopulate the page after logout",
+      "passed": true,
+      "durationMs": 118
+    },
+    {
+      "name": "OpenAPI declares bearer authentication for all eight protected operations",
+      "passed": true,
+      "durationMs": 114
+    }
+  ],
+  "source_sha256": "96fcec9cce3b0cc68f0249e04765f8ad18072fb41e0f460405b411044ceef6d8",
+  "browser_test_source_sha256": "d89d14a2dcda2a125132747e72516dfe4379648fad6bc93c643968e33f542b2a",
+  "command": "PLAYWRIGHT_CHANNEL=chrome npm run test:e2e (same Python entry point; Node supplied through NODE_BIN)",
+  "scope": "Local isolated desktop Chrome 1440x1080, real HTTP/MySQL/Redis except explicit 401/503 and delayed-response injections; not a cross-browser or production test"
+}

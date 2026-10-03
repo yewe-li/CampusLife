@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: ${TEST_DB_URL:jdbc:mysql://127.0.0.1:3306/campuslife_test?useUnicode=true&characterEncoding=UTF-8&connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true&allowPublicKeyRetrieval=true&sslMode=DISABLED}
+  flyway:
+    locations: classpath:db/migration,classpath:db/demo
+  data:
+    redis:
+      database: 1
+server:
+  port: 0
+management:
+  server:
+    port: 0
+app:
+  redis-prefix: 'campuslife:test:'
+  auth:
+    dev-code-enabled: true
+    code-cooldown-seconds: 0

@@ -1,0 +1,11 @@
+* text=auto
+*.java text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.sql text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.cjs text eol=lf
+mvnw text eol=lf
+mvnw.cmd text eol=crlf

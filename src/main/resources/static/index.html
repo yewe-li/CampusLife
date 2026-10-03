@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="CampusLife 校园周边优惠平台，本地 Java 后端项目演示。">
+  <title>CampusLife · 课间，也有好生活</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CampusLife 首页"><span class="brand-mark" aria-hidden="true">C<span>·</span></span><span>CampusLife<small>课间生活指南</small></span></a>
+    <nav aria-label="页面导航">
+      <button class="nav-link active" id="discover-tab" type="button" aria-current="page">发现好店</button>
+      <button class="nav-link" id="wallet-tab" type="button">我的优惠券</button>
+      <button class="nav-link" id="merchant-tab" type="button" hidden>商户工作台</button>
+    </nav>
+    <div class="account"><span id="account-label" class="account-label">游客浏览</span><button class="button small" id="login-open" type="button">演示登录</button><button class="button secondary small" id="logout-button" type="button" hidden>退出</button></div>
+  </header>
+
+  <main class="page-shell">
+    <section id="discover-view" aria-labelledby="hero-title">
+      <div class="hero">
+        <div class="hero-copy"><span class="eyebrow"><span class="status-dot"></span>校园周边 · 小小的日常优惠</span><h1 id="hero-title">课间，<br>也有<span>好生活。</span></h1><p>下一杯咖啡、下课后的热饭。<br>从校区附近，找到刚刚好的去处。</p><a class="text-link" href="#shop-section">看看附近好店 <span aria-hidden="true">↘</span></a></div>
+        <div class="hero-illustration" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="ticket-art"><span>CAMPUS CLUB</span><strong>课间<br>补给站</strong><div class="ticket-rule"></div><small>COFFEE / FOOD / MORE</small></div><div class="cup-art"><div class="cup-lid"></div><span>C<span>·</span></span></div><div class="hero-sticker">离课堂近一点<br>离生活也近一点</div><span class="spark spark-one">✳</span><span class="spark spark-two">✦</span></div>
+      </div>
+
+      <section id="shop-section" class="shops-section" aria-labelledby="shops-heading">
+        <div class="section-heading"><div><span class="eyebrow">AROUND THE CAMPUS</span><h2 id="shops-heading">今天，想去哪儿？</h2></div><span id="shop-count" class="muted">正在读取店铺</span></div>
+        <form id="filter-form" class="filter-bar">
+          <label>所在校区<select id="campus-filter" name="campus"><option value="">全部校区</option><option>东校区</option><option>西校区</option></select></label>
+          <label>消费类别<select id="category-filter" name="category"><option value="">全部类别</option><option>咖啡</option><option>餐饮</option><option>运动</option></select></label>
+          <label>人均预算（元）<input id="price-filter" name="maxPrice" type="number" min="0" max="100000" step="0.01" placeholder="不限"></label>
+          <button class="button" id="filter-button" type="submit">查找好店 <span aria-hidden="true">→</span></button>
+          <button class="text-button" id="filter-reset" type="button">重置</button>
+        </form>
+        <div id="shop-list" class="shop-grid" aria-live="polite"></div>
+        <div class="pagination" id="shop-pagination" hidden><button class="button secondary small" id="shop-prev" type="button">← 上一页</button><span id="shop-page-label"></span><button class="button secondary small" id="shop-next" type="button">下一页 →</button></div>
+      </section>
+    </section>
+
+    <section id="wallet-view" class="wallet-view" aria-labelledby="wallet-heading" hidden>
+      <div class="section-heading"><div><span class="eyebrow">YOUR CAMPUS PERKS</span><h1 id="wallet-heading">我的优惠券</h1><p class="muted">领到的小确幸，都在这里。</p></div><button class="button secondary small" id="wallet-refresh" type="button">刷新列表</button></div>
+      <p class="privacy-note">仅展示当前登录账号的领取记录。演示核销码可交给对应店铺的商户进行模拟核销；核销后不能再次使用。</p>
+      <div id="wallet-list" class="wallet-grid" aria-live="polite"></div>
+      <div class="pagination" id="wallet-pagination" hidden><button class="button secondary small" id="wallet-prev" type="button">← 上一页</button><span id="wallet-page-label"></span><button class="button secondary small" id="wallet-next" type="button">下一页 →</button></div>
+    </section>
+
+    <section id="merchant-view" class="wallet-view merchant-view" aria-labelledby="merchant-heading" hidden>
+      <div class="section-heading"><div><span class="eyebrow">YOUR CAMPUS STOREFRONT</span><h1 id="merchant-heading">商户工作台</h1><p class="muted">照顾好自己的小店，也接住每一份优惠。</p></div><button class="button secondary small" id="merchant-refresh" type="button">刷新店铺</button></div>
+      <p class="privacy-note">这里只展示当前商户的店铺，包含已下线店铺。下线店铺可在此重新上线；所有修改和核销权限均由服务器检查。</p>
+      <div class="section-heading merchant-section-heading"><h2>我的店铺</h2><span id="merchant-count" class="muted"></span></div>
+      <div id="merchant-list" class="merchant-list" aria-live="polite"></div>
+      <div class="pagination" id="merchant-pagination" hidden><button class="button secondary small" id="merchant-prev" type="button">← 上一页</button><span id="merchant-page-label"></span><button class="button secondary small" id="merchant-next" type="button">下一页 →</button></div>
+      <section class="redemption-panel" aria-labelledby="redemption-heading">
+        <div><span class="eyebrow">DEMO REDEMPTION</span><h2 id="redemption-heading">模拟到店核销</h2><p class="muted">输入顾客优惠券上的核销码。只能核销自己店铺的有效券，每张券仅可核销一次。</p></div>
+        <p id="redemption-help" class="privacy-note">这是学习项目的模拟操作：没有支付、真实消费或消费金额校验。点击后会保存核销记录，请使用演示优惠券。</p>
+        <form id="redemption-form" class="redemption-form"><label for="redemption-code">优惠券核销码<input id="redemption-code" name="redeemCode" autocomplete="off" autocapitalize="none" spellcheck="false" pattern="[0-9a-f]{32}" minlength="32" maxlength="32" placeholder="32 位小写字母 a–f 与数字" aria-describedby="redemption-help" required></label><button id="redemption-submit" class="button" type="submit">确认模拟核销</button></form>
+        <p id="redemption-error" class="inline-error" role="alert" hidden></p>
+        <div id="redemption-result" class="redemption-result" role="status" aria-live="polite" hidden></div>
+      </section>
+    </section>
+
+    <aside class="demo-note"><span class="demo-dot" aria-hidden="true"></span><div><strong>本地项目演示</strong><p>店铺与账号为虚构种子数据；登录使用模拟验证码，核销为模拟操作，不发送短信，不涉及支付或真实消费。</p></div><a href="/docs" target="_blank" rel="noopener">接口文档 ↗</a></aside>
+  </main>
+  <footer class="site-footer"><span>CampusLife <span class="footer-dot">·</span> 留一点时间给生活</span><span>Java 后端学习项目</span></footer>
+
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden><div><strong id="notice-title"></strong><p id="notice-text"></p><small id="notice-request"></small></div><button id="notice-close" class="icon-button" type="button" aria-label="关闭提示">×</button></div>
+
+  <dialog id="login-dialog" class="login-dialog" aria-labelledby="login-title">
+    <div class="dialog-heading"><span class="eyebrow">WELCOME TO CAMPUSLIFE</span><button class="icon-button" id="login-close" type="button" aria-label="关闭登录">×</button></div>
+    <h2 id="login-title">先登录，再收下优惠。</h2><p class="dialog-intro">仅本地演示 · 选择预设账号获取模拟验证码。此操作不会发送短信，也不会创建新账号。</p>
+    <form id="login-form" class="stack-form">
+      <label>演示账号<select id="login-phone" required><option value="13800000001">林同学 · 学生（13800000001）</option><option value="13800000002">陈同学 · 学生（13800000002）</option><option value="13900000001">东校区商户（13900000001）</option><option value="13900000002">西校区商户（13900000002）</option></select></label>
+      <div class="code-row"><label>模拟验证码<input id="login-code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" placeholder="6 位数字" required></label><button id="code-button" class="button secondary" type="button">获取模拟码</button></div>
+      <p id="code-preview" class="code-preview" aria-live="polite" hidden></p>
+      <p id="login-error" class="inline-error" role="alert" hidden></p>
+      <button class="button full-width" id="login-submit" type="submit">登录演示账号 →</button>
+    </form>
+    <p class="fine-print">登录凭据仅保存在当前浏览器标签页，会话固定有效期为 2 小时；退出后当前凭据立即失效。</p>
+  </dialog>
+
+  <dialog id="shop-dialog" class="shop-dialog" aria-labelledby="detail-title">
+    <div class="dialog-heading"><span class="eyebrow">A LITTLE PLACE NEAR YOU</span><button class="icon-button" id="shop-close" type="button" aria-label="关闭店铺详情">×</button></div>
+    <div id="detail-notice" class="code-preview" role="status" aria-live="polite" hidden></div>
+    <div id="detail-loading" class="empty-state" hidden>正在读取店铺详情…</div>
+    <div id="detail-body" hidden>
+      <div class="detail-labels" id="detail-labels"></div><h2 id="detail-title">店铺详情</h2><p id="detail-description" class="detail-description"></p><div class="detail-meta"><span id="detail-address"></span><strong id="detail-price"></strong></div>
+      <div class="detail-section-heading"><h3>可领取优惠</h3><span class="muted">领取前需登录</span></div>
+      <div id="offer-list" class="offer-list" aria-live="polite"></div>
+      <div class="pagination compact" id="offer-pagination" hidden><button class="text-button" id="offer-prev" type="button">← 上一页</button><span id="offer-page-label"></span><button class="text-button" id="offer-next" type="button">下一页 →</button></div>
+      <div id="merchant-panel" class="merchant-panel" hidden><p class="muted">仅能管理属于当前商户的店铺，归属由服务器校验。已下线店铺可在商户工作台找到。</p><button class="button secondary" id="detail-manage" type="button">管理这家店铺</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="merchant-dialog" class="merchant-dialog" aria-labelledby="merchant-detail-title">
+    <div class="dialog-heading"><span class="eyebrow">MANAGE YOUR STOREFRONT</span><button class="icon-button" id="merchant-close" type="button" aria-label="关闭店铺管理">×</button></div>
+    <h2 id="merchant-detail-title">管理店铺</h2><p class="dialog-intro">下线仅从公开列表隐藏店铺，已有领取记录会保留。保存时会检查版本，避免覆盖他人的修改。</p>
+    <p id="merchant-detail-loading" class="muted" role="status">正在读取店铺信息…</p>
+    <p id="merchant-error" class="inline-error" role="alert" hidden></p>
+    <p id="merchant-success" class="code-preview" role="status" hidden></p>
+    <form id="merchant-form" class="stack-form" hidden><label for="merchant-name">店铺名称<input id="merchant-name" maxlength="100" required></label><div class="merchant-grid"><label for="merchant-price">人均价格（元）<input id="merchant-price" type="number" min="0" max="100000" step="0.01" required></label><label for="merchant-status">展示状态<select id="merchant-status"><option value="1">上线展示</option><option value="0">下线隐藏</option></select></label></div><div class="merchant-actions"><button class="button" id="merchant-save" type="submit">保存修改</button><button class="text-button" id="merchant-reload" type="button">重新读取最新信息</button></div></form>
+  </dialog>
+</body>
+</html>

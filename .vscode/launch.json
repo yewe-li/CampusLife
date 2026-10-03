@@ -1,0 +1,4 @@
+{
+  "version": "0.2.0",
+  "configurations": [{"type":"java","name":"CampusLife (dev)","request":"launch","mainClass":"com.campuslife.CampusLifeApplication","projectName":"campuslife","cwd":"${workspaceFolder}","envFile":"${workspaceFolder}/.env","args":"--spring.profiles.active=dev","console":"integratedTerminal"}]
+}
